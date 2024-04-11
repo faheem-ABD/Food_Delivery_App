@@ -1,6 +1,12 @@
 import express, { Request, Response} from "express";
 import cors from "cors";
 import "dotenv/config";
+import mongoose from "mongoose";
+
+// Casting in typescript to force it as a string
+mongoose
+    .connect(process.env.MONGODB_CONNECTION_STRING as string)
+    .then(() => console.log("Connected to database !"));
 
 //Create a new server for express
 const app = express();
