@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import MobileNav from "./MobileNav";
+import MainNav from "./MainNav";
 
 const Header = () => {
   return(
@@ -7,12 +8,16 @@ const Header = () => {
         <div className="container mx-auto flex justify-between items-center"></div>
         <Link
             to="/"
-            className="text-4xl font-bold tracking-tight text-yellow-500">
+            className="text-4xl font-bold tracking-tight text-yellow-500"
+          >
             Eatholm.com
         </Link>
         <div className="md:hidden">
           <MobileNav />
         </div>
+        <div className="hidden md:block">
+          <MainNav />
+          </div>
     </div>
   );
 };
